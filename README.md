@@ -28,11 +28,11 @@
 * In between these state thread can have a waiting state which can iterate between the runnable and running.
 
 
-* New : A new thread begins its life cycle in this state and remains here until the program starts the thread. It is also known as a born thread.
-* Runnable : Once a newly born thread starts, the thread comes under runnable state. A thread stays in this state until it executing its task.
-* Running : In this state a thread starts executing by entering run() method and the yeild() method can send them to go back to the Runnable state.
-* Waiting : A thread enters this state when it is temporarily in an inactive state i.e it is still alive but is not eligible to run. It can be waiting, sleeping or blocked state.
-* Terminated : A runnable threads enter the terminated state when it completes its task or otherwise terminates.
+* **New** : A new thread begins its life cycle in this state and remains here until the program starts the thread. It is also known as a born thread.As we use the Thread class to construct a thread entity, the thread is born and is defined as being in the New state. That is, when a thread is created, it enters a new state, but the start() method on the instance has not yet been invoked.
+* **Runnable** : Once a newly born thread starts, the thread comes under runnable state. A thread stays in this state until it executing its task. When a new thread's start() function is called, it enters a runnable state.In the runnable environment, the thread is ready for execution and is awaiting the processor's availability (CPU time). That is, the thread has entered the queue (line) of threads waiting for execution.
+* **Running** : In this state a thread starts executing by entering run() method and the yeild() method can send them to go back to the Runnable state.Running implies that the processor (CPU) has assigned a time slot to the thread for execution. When a thread from the runnable state is chosen for execution by the thread scheduler, it joins the running state.In the running state, the processor allots time to the thread for execution and runs its run procedure.
+* **Waiting** : A thread enters this state when it is temporarily in an inactive state i.e it is still alive but is not eligible to run. It can be waiting, sleeping or blocked state.
+* **Terminated** : A runnable threads enter the terminated state when it completes its task or otherwise terminates.When a thread's run() function ends the execution of sentences, it automatically dies or enters the dead state. That is, when a thread exits the run() process, it is terminated or killed. When the stop() function is invoked, a thread will also go dead.
 
 
 * A thread can be created using two ways:
